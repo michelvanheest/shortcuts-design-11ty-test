@@ -1,0 +1,58 @@
+<html>
+    <head>
+        <title>Shortcuts.design 11ty refactor test site</title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" type="text/javascript"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="/js/search.js"></script>
+        <link rel="stylesheet" href="/css/style.css">
+    </head>
+    <body>
+        
+
+<h1>Zeplin shortcuts</h1>
+
+
+
+<section class="toolspage-search">
+    <input id="myInput" type="text" placeholder="Search for shortcuts...">
+</section>
+
+
+
+<div class="fakeButton">Tekst</div>
+
+    <style>
+        .fakeButton {
+            background-color: blue;
+        }
+    </style>
+
+
+
+
+<section>
+    
+        <script>
+            $( document ).ready(function(){
+                $("#data-Zeplin-Mac").load("../../data-live/Design/toolspage-Zeplin-Mac.html");
+            });
+        </script>
+    
+    <div id="data-Zeplin-Mac"></div>
+
+    <hr>
+
+    
+        <script>
+            $( document ).ready(function(){
+                $("#data-Zeplin-Windows").load("../../data-live/Design/toolspage-Zeplin-Windows.html");
+            });
+        </script>
+    
+    <div id="data-Zeplin-Windows"></div>
+
+    
+</section>
+    </body>
+</html>

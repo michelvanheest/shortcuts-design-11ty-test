@@ -1,0 +1,61 @@
+---
+layout: layouts/base.njk
+---
+
+{# Just the title of the tool #}
+<h1>{{ title }} shortcuts</h1>
+
+
+{# Functioning search for the data loaded in below #}
+<section class="toolspage-search">
+    <input id="myInput" type="text" placeholder="Search for shortcuts...">
+</section>
+
+
+{# Demo for the styling of the buttons, fakeButton is fake, but it could be used as a class in elements that needs to get a conditional color based on their type (dev/design/misc) #}
+<div class="fakeButton">Tekst</div>
+{% if toolGroup == "design" %}
+    <style>
+        .fakeButton {
+            background-color: blue;
+        }
+    </style>
+{% else %}
+    <style>
+        .fakeButton {
+            background-color: green;
+        }
+    </style>
+{% endif %}
+
+
+{# Loading in the external data. We can still use the submodules for now :) -- within the if-statements should also come some logic to display or not display the segmented control. Also, there's still a bug of not showing the second list if os1 == windows #}
+<section>
+    {% if os1 == "Mac" %}
+        <script>
+            $( document ).ready(function(){
+                $("#data-{{ title }}-{{ os1 }}").load("../../data-live/Design/toolspage-{{ title }}-{{ os1 }}.html");
+            });
+        </script>
+    {% elseif os1 == "Windows" %}
+        <script>
+            $( document ).ready(function(){
+                $("#data-{{ title }}-{{ os1 }}").load("../../data-live/Design/toolspage-{{ title }}-{{ os1 }}.html");
+            });
+        </script>
+    {% endif%}
+    <div id="data-{{ title }}-{{ os1 }}"></div>
+
+    <hr>
+
+    {% if os2 == "Windows" %}
+        <script>
+            $( document ).ready(function(){
+                $("#data-{{ title }}-{{ os2 }}").load("../../data-live/Design/toolspage-{{ title }}-{{ os2 }}.html");
+            });
+        </script>
+    {% endif %}
+    <div id="data-{{ title }}-{{ os2 }}"></div>
+
+    
+</section>

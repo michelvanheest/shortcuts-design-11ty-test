@@ -1,0 +1,5 @@
+<ul>
+    {% for tool in toolslist %}
+        <a href="{{ tool.url | url }}">{{ tool.data.title }}</a>
+    {% endfor %}
+</ul>
